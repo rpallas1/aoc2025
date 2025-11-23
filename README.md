@@ -25,13 +25,13 @@ cd aoc2025
 Each person should have their **own branch**
 
 ```bash
-git checkout -b <firstname><lastname>
+git checkout -b <firstname>-<lastname>
 ```
 
 ### 3. Push Your Branch
 
 ```bash
-git push -u origin <firstname><lastname>
+git push -u origin <firstname>-<lastname>
 ```
 
 ### 4. Create a New Day
