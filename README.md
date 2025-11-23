@@ -287,6 +287,8 @@ Please:
 4. Update the README documentation
 5. Confirm your approach with me before implementing
 
+---
+
 ## Optional Configuration (if you have specific requirements)
 
 You can override the AI's inferences by specifying:
@@ -303,6 +305,8 @@ You can override the AI's inferences by specifying:
 
 ```
 Add support for Haskell to my Advent of Code template.
+
+[Rest of starter prompt...]
 ```
 
 The agent will research Haskell and suggest using `runhaskell`, `.hs` extension, etc.
@@ -313,6 +317,8 @@ The agent will research Haskell and suggest using `runhaskell`, `.hs` extension,
 Add support for Rust to my Advent of Code template.
 
 Use `cargo run` as the execution command and include a Cargo.toml for dependency management.
+
+[Rest of starter prompt...]
 ```
 
 ### Testing Your New Language
