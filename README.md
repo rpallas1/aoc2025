@@ -17,21 +17,21 @@ Let's have some fun and sharpen our problem-solving skills together!
 
 ```bash
 git clone <repo-url>
-cd advent-of-code-2025
+cd aoc2025
 ```
 
-### 2. Switch to Starter Branch
-
-```bash
-git checkout starter
-```
-
-### 3. Create Your Branch
+### 2. Create Your Branch
 
 Each person should have their **own branch**
 
 ```bash
-git checkout -b <yourname>
+git checkout -b <firstname><lastname>
+```
+
+### 3. Push Your Branch
+
+```bash
+git push -u origin <firstname><lastname>
 ```
 
 ### 4. Create a New Day
@@ -53,6 +53,7 @@ days/day01/
 ```
 
 **Choose Your Language:**
+
 ```bash
 ./new-day.sh 1           # Python (default)
 ./new-day.sh 2 js        # JavaScript
@@ -72,7 +73,7 @@ Example:
 ```bash
 git add .
 git commit -m "Day 01 Part 1 complete"
-git push origin <yourname>
+git push
 ```
 
 ## Running Your Solutions
@@ -86,6 +87,7 @@ The universal runner (`run.sh`) handles all languages and provides **automatic e
 ```
 
 Examples:
+
 ```bash
 ./run.sh 1 1 python      # Run day 1, part 1 (Python)
 ./run.sh 2 2 js          # Run day 2, part 2 (JavaScript)
@@ -116,13 +118,13 @@ def solve():
     # Read input file
     with open('input.txt', 'r') as f:
         data = f.read().strip()
-    
+
     # Parse input
     lines = data.split('\n')
-    
+
     # Your solution logic here
     result = sum(int(line) for line in lines)
-    
+
     return result
 
 
@@ -163,14 +165,14 @@ git switch <yourname>
 # Commit it
 git add .
 git commit -m "Day 03 Part 1 complete"
-git push origin <yourname>
+git push
 
 # Implement and test Part 2
 ./run.sh 3 2
 
 git add .
 git commit -m "Day 03 Part 2 complete"
-git push origin <yourname>
+git push
 ```
 
 ## Runner Output
@@ -237,18 +239,21 @@ The project uses modern package managers and automatically sets up dependencies 
 When you create your first day with a specific language, the project automatically creates the necessary dependency files:
 
 **Python (UV):**
+
 - Creates `pyproject.toml` on first use
 - Install dependencies: `uv sync`
 - Add packages: `uv add <package-name>`
 - Example: `uv add numpy requests`
 
 **JavaScript/TypeScript:**
+
 - Creates `package.json` and `tsconfig.json` on first use
 - Install dependencies: `npm install`
 - Add packages: `npm install <package-name>`
 - Example: `npm install lodash`
 
 **Bash:**
+
 - No dependency management needed - uses system utilities
 
 ## Supported Languages
@@ -269,6 +274,7 @@ Want to use a language that's not currently supported? You can easily extend thi
 Simply specify which language you want to add and the agent will figure out the details and confirm with you:
 
 **Basic Prompt Template:**
+
 ```
 Add support for [LANGUAGE_NAME] to my Advent of Code template.
 
@@ -294,12 +300,15 @@ You can override the AI's inferences by specifying:
 ### Examples
 
 **Simple (let AI figure it out):**
+
 ```
 Add support for Haskell to my Advent of Code template.
 ```
+
 The agent will research Haskell and suggest using `runhaskell`, `.hs` extension, etc.
 
 **With specific requirements:**
+
 ```
 Add support for Rust to my Advent of Code template.
 
@@ -311,16 +320,19 @@ Use `cargo run` as the execution command and include a Cargo.toml for dependency
 After adding support:
 
 1. Test the setup script:
+
    ```bash
    ./new-day.sh 1 [your-language]
    ```
 
 2. Verify the template was created correctly:
+
    ```bash
    ls -la days/day01/
    ```
 
 3. Add a simple test to the template and run it:
+
    ```bash
    ./run.sh 1 1 [your-language]
    ```
@@ -329,3 +341,4 @@ After adding support:
    ```bash
    ./run.sh 1 1
    ```
+
